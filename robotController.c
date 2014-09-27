@@ -11,20 +11,23 @@
 //to either a value from -127 to 127
 //get a controller's value with the function "vexRT(channel);"
 
-int a = 0;
+
 int speedMultiplier = 1;
 
 task main(){
 
-	if(vexRT(Ch1) > 10){
+	if(vexRT[Btn6D] == 1){
 		motor[servoMotorA] = 127;
+		wait1Msec(250);
 	}
-	else if(vexRT(Ch1) < -10){
+	else{
 		motor[servoMotorA] = -127;
+		wait1Msec(250);
 	}
 
 //	motor[leftLarge] = 127;
 //	motor[rightLarge] = 127;
+
 
 	startTask(main);
 }
